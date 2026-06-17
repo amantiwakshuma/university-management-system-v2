@@ -1,0 +1,614 @@
+/* Register.css - Modern & Professional University Portal Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --univ-primary: #1e3a8a;
+  --univ-primary-light: #3b82f6;
+  --univ-secondary: #0f172a;
+  --univ-accent: #f59e0b;
+  --univ-bg-gray: #f8fafc;
+  --univ-border: #e2e8f0;
+  --univ-text-muted: #64748b;
+  --student-theme: #2563eb;
+  --instructor-theme: #0d9488; /* Teal Accent for Instructors */
+}
+
+.univ-wrapper {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--univ-bg-gray);
+  color: var(--univ-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Footer share styles but can be supplemented here */
+.portal-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--univ-border);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.portal-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Large container for dual panel registration */
+.register-card-container {
+  background: white;
+  width: 100%;
+  max-width: 1120px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 340px; /* Right column is a supportive guide list for helpful onboarding context */
+  overflow: hidden;
+}
+
+/* Form Side - Left Column */
+.register-form-side {
+  padding: 3.5rem;
+}
+
+.register-form-header {
+  margin-bottom: 2rem;
+}
+
+.register-form-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--univ-secondary);
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.register-form-header p {
+  color: var(--univ-text-muted);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* User Type Switcher Pill Container */
+.role-toggle-container {
+  display: flex;
+  border: 1.5px solid var(--univ-border);
+  padding: 0.375rem;
+  background-color: #f1f5f9;
+  border-radius: 14px;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.role-toggle-button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.role-toggle-button.active-student {
+  background-color: var(--student-theme);
+  color: white;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.role-toggle-button.active-instructor {
+  background-color: var(--instructor-theme);
+  color: white;
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2);
+}
+
+.role-toggle-button:hover:not(.active-student):not(.active-instructor) {
+  background-color: #e2e8f0;
+}
+
+/* Split Form Grid Arrangement */
+.registration-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Single column elements across grid */
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+/* Input design specific to registration */
+.reg-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.reg-label span {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.reg-input {
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--univ-secondary);
+  background-color: #f8fafc;
+  border: 1.5px solid var(--univ-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.reg-input:focus {
+  background-color: white;
+  border-color: var(--univ-primary-light);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Select specific styling overrides */
+select.reg-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 14px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* Buttons specifically colored based on Student vs Instructor themes */
+.reg-submit-btn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  color: white;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.reg-submit-btn.theme-student {
+  background: linear-gradient(135deg, var(--student-theme) 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.reg-submit-btn.theme-student:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.reg-submit-btn.theme-instructor {
+  background: linear-gradient(135deg, var(--instructor-theme) 0%, #0f766e 100%);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+}
+
+.reg-submit-btn.theme-instructor:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.35);
+}
+
+.reg-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Onboarding support info sidebar */
+.registration-onboard-sidebar {
+  background-color: #f8fafc;
+  border-left: 1px solid var(--univ-border);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.onboard-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--univ-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--univ-primary-light);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.onboard-subtitle {
+  color: var(--univ-text-muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Check lists */
+.guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.guide-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.step-num {
+  background-color: white;
+  border: 1.5px solid var(--univ-border);
+  color: var(--univ-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guide-step.done .step-num {
+  background-color: #dcfce7;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+.step-info h5 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin: 0 0 0.125rem 0;
+  color: var(--univ-secondary);
+}
+
+.step-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--univ-text-muted);
+  line-height: 1.4;
+}
+
+.sidebar-brand-badge {
+  background-color: white;
+  border: 1px solid var(--univ-border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+.badge-text h6 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.badge-text p {
+  font-size: 0.75rem;
+  color: var(--univ-text-muted);
+  margin: 0;
+}
+
+/* Toggle link to register */
+.secondary-register-link-area {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--univ-text-muted);
+  border-top: 1px solid var(--univ-border);
+  padding-top: 1.5rem;
+}
+
+.link-highlight {
+  color: var(--univ-primary-light);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.link-highlight:hover {
+  color: var(--univ-primary);
+  text-decoration: underline;
+}
+
+
+
+
+/* Spin animation */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spinning 0.8s linear infinite;
+}
+
+@keyframes spinning {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsiveness */
+@media (max-width: 960px) {
+  .register-card-container {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    border-radius: 20px;
+  }
+  .registration-onboard-sidebar {
+    display: none; /* Hide supporting sidebar on tables for space */
+  }
+  .register-form-side {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .registration-form-grid {
+    grid-template-columns: 1fr; /* Stack inputs single column on mobile */
+  }
+  .grid-col-span-2 {
+    grid-column: span 1;
+  }
+  .register-form-side {
+    padding: 1.5rem;
+  }
+  .role-toggle-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+
+
+
+/* Enhanced Footer Styles */
+.portal-footer-enhanced {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo-icon {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-text {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: white;
+  display: block;
+}
+
+.footer-tagline {
+  font-size: 0.6875rem;
+  color: #94a3b8;
+  display: block;
+}
+
+.footer-description {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 24rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.footer-links-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .footer-links-group {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.footer-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links-list li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links-list li a:hover {
+  color: white;
+}
+
+.footer-contact-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .footer-contact-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.8125rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-bottom-left p {
+  margin: 0;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-right a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-right a:hover {
+  color: #cbd5e1;
+}
+
+.separator {
+  color: #334155;
+}

@@ -1,0 +1,219 @@
+/* MyGrades.css */
+
+/* Container */
+.grades-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Loading State */
+.grades-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+/* Stats Grid */
+.grades-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grades-stat-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.cgpa-card {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+  border: none;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.stat-sub {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* Section Title */
+.grades-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+/* Empty State */
+.grades-empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  color: #64748b;
+}
+
+/* Semester Card */
+.grades-semester-card {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.grades-semester-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.grades-semester-header:hover {
+  background: #f1f5f9;
+}
+
+.semester-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.semester-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.semester-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.semester-gpa {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Semester Content */
+.grades-semester-content {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Table Styles */
+.grades-table-wrapper {
+  overflow-x: auto;
+}
+
+.grades-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 500px;
+}
+
+.grades-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.grades-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.grades-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.course-code-text {
+  color: #2563eb;
+  font-family: monospace;
+}
+
+.grade-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.status-completed-text {
+  color: #10b981;
+}
+
+.status-progress-text {
+  color: #f59e0b;
+}
+
+/* Table Footer */
+.grades-table-footer {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.grades-table-footer td {
+  padding: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .grades-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .grades-semester-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .semester-title {
+    font-size: 0.875rem;
+  }
+  
+  .semester-gpa {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .grades-table th,
+  .grades-table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,380 @@
+/* ManageFees.css */
+
+.fee-management-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.fee-header {
+    margin-bottom: 24px;
+}
+
+.fee-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.fee-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Summary Cards */
+.fee-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+    .fee-summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .fee-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.summary-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.summary-card.paid {
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.summary-card.partial {
+    background: #fff3cd;
+    border-color: #ffeaa7;
+}
+
+.summary-card.pending {
+    background: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.summary-card.overdue {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.summary-card.outstanding {
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+.summary-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.summary-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Action Buttons */
+.fee-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.btn-generate {
+    padding: 8px 20px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-overdue {
+    padding: 8px 20px;
+    background: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Tables */
+.fee-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.fee-table th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fee-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+.fee-table tr:hover td {
+    background: #f8fafc;
+}
+
+.student-id {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-success {
+    color: #10b981;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.text-danger {
+    color: #dc2626;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.status-paid {
+    background: #10b981;
+}
+
+.status-partial {
+    background: #f59e0b;
+}
+
+.status-pending {
+    background: #6b7280;
+}
+
+.status-overdue {
+    background: #ef4444;
+}
+
+/* Buttons in Table */
+.btn-pay {
+    padding: 5px 12px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.btn-pay:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.btn-delete {
+    padding: 5px 12px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Recent Payments */
+.recent-payments {
+    margin-top: 30px;
+}
+
+.recent-payments h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.payments-table-wrapper {
+    overflow-x: auto;
+}
+
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+}
+
+.payments-table th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.payments-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.modal-note {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 8px 16px;
+    background: #e2e8f0;
+    color: #1e293b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    padding: 8px 16px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Loading State */
+.fee-loading {
+    text-align: center;
+    padding: 50px;
+    color: #64748b;
+}
+
+/* No Data */
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+
+
+.btn-single {
+    padding: 8px 20px;
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.section-name {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
