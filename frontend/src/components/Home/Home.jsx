@@ -394,16 +394,16 @@ function Home() {
       const [studentsRes, instructorsRes, coursesRes, deptsRes] =
         await Promise.all([
           axios
-            .get(`${API_URL}/public/stats/students`)
+            .get(`${API_URL}/api/public/stats/students`)
             .catch(() => ({ data: { count: defaultStats.totalStudents } })),
           axios
-            .get(`${API_URL}/public/stats/instructors`)
+            .get(`${API_URL}/api/public/stats/instructors`)
             .catch(() => ({ data: { count: defaultStats.totalInstructors } })),
           axios
-            .get(`${API_URL}/public/stats/courses`)
+            .get(`${API_URL}/api/public/stats/courses`)
             .catch(() => ({ data: { count: defaultStats.totalCourses } })),
           axios
-            .get(`${API_URL}/public/stats/departments`)
+            .get(`${API_URL}/api/public/stats/departments`)
             .catch(() => ({ data: { count: defaultStats.totalDepartments } })),
         ]);
 
@@ -423,10 +423,10 @@ function Home() {
     try {
       const [deptsRes, coursesRes] = await Promise.all([
         axios
-          .get(`${API_URL}/public/departments`)
+          .get(`${API_URL}/api/public/departments`)
           .catch(() => ({ data: defaultDepartments })),
         axios
-          .get(`${API_URL}/public/courses`)
+          .get(`${API_URL}/api/public/courses`)
           .catch(() => ({ data: defaultCourses })),
       ]);
       setDepartments(deptsRes.data);
