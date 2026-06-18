@@ -51,7 +51,7 @@ app.use('/api/academic', academicRoutes);
 const publicRoutes = require('./routes/publicRoutes');
 app.use('/api/public', publicRoutes);
 
-const libraryRoutes = require('./routes/libraryRoutes');
+const libraryRoutes = require('./routes/LibraryRoutes');
 app.use('/api/library', libraryRoutes);
 
 app.listen(5000, () => {
