@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import "./StudentDashboard.css";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import MyGrades from "../MyGrades/MyGrades";
 import StudentLibrary from "../StudentLibrary/StudentLibrary";
 import FeeStatus from "../FeeStatus";

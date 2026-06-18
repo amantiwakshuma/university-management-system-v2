@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { BookOpen, Plus, Trash2, X, Clock, MapPin, User, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from "framer-motion";
 
 function ManageSessionCourses() {
     const [departments, setDepartments] = useState([]);

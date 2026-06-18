@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { BookOpen, Clock, AlertCircle, CheckCircle, ShieldAlert, Award, DollarSign } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from "framer-motion";
 import './StudentLibrary.css';
 
 // Stunning aesthetic mock data fallback for live previews
