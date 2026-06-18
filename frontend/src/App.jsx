@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import Login from "./components/Login/Login ";
+import Login from "./components/Login/Login";
 import StudentDashboard from "./components/Dashboard/Student/StudentDashboard/StudentDashboard";
 import InstructorDashboard from "./components/Dashboard/InstructorDashboard";
 import AdminDashboard from "./components/Dashboard/Admin/AdminDashboard";
