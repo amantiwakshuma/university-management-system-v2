@@ -45,7 +45,7 @@ app.use('/api/instructor', instructorRouter)
 const feeRouter = require('./routes/Fee');
 app.use('/api/fees', feeRouter);
 
-const academicRoutes = require('./routes/academicRoutes');
+const academicRoutes = require('./routes/AcademicRoutes');
 app.use('/api/academic', academicRoutes);
 
 const publicRoutes = require('./routes/publicRoutes');
