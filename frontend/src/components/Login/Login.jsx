@@ -27,13 +27,15 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/auth/login`,
         {
           username,
           password,

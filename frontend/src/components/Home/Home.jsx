@@ -34,6 +34,9 @@ import {
 } from "lucide-react";
 import "./Home.css";
 
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 // Fallback data (keep your existing defaults)
 const defaultStats = {
   totalStudents: 15420,
@@ -391,16 +394,16 @@ function Home() {
       const [studentsRes, instructorsRes, coursesRes, deptsRes] =
         await Promise.all([
           axios
-            .get("/api/public/stats/students")
+            .get(`${API_URL}/public/stats/students`)
             .catch(() => ({ data: { count: defaultStats.totalStudents } })),
           axios
-            .get("http://localhost:5000/api/public/stats/instructors")
+            .get(`${API_URL}/public/stats/instructors`)
             .catch(() => ({ data: { count: defaultStats.totalInstructors } })),
           axios
-            .get("http://localhost:5000/api/public/stats/courses")
+            .get(`${API_URL}/public/stats/courses`)
             .catch(() => ({ data: { count: defaultStats.totalCourses } })),
           axios
-            .get("http://localhost:5000/api/public/stats/departments")
+            .get(`${API_URL}/public/stats/departments`)
             .catch(() => ({ data: { count: defaultStats.totalDepartments } })),
         ]);
 
@@ -420,10 +423,10 @@ function Home() {
     try {
       const [deptsRes, coursesRes] = await Promise.all([
         axios
-          .get("http://localhost:5000/api/public/departments")
+          .get(`${API_URL}/public/departments`)
           .catch(() => ({ data: defaultDepartments })),
         axios
-          .get("http://localhost:5000/api/public/courses")
+          .get(`${API_URL}/public/courses`)
           .catch(() => ({ data: defaultCourses })),
       ]);
       setDepartments(deptsRes.data);
