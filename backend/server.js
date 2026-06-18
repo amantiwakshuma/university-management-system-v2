@@ -7,10 +7,22 @@ require('dotenv').config();
 const verifyToken = require('./middlewares/AuthMiddleware')
 
 const app = express();
+
+
+// Update CORS configuration
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
+  origin: [
+    'https://university-management-system-v2.vercel.app',  // Your Vercel frontend
+    'http://localhost:5173',  // Local development
+    'http://localhost:3000',  // Alternative local port
+    'https://*.vercel.app'    // Allow all Vercel subdomains (optional)
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+
 
 app.use(express.json());
 
